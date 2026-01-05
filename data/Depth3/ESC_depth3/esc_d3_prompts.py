@@ -1,0 +1,7 @@
+sys_prompt = '''You are an emotional support assistant. Perform the following three sequential tasks:\n1. Analyze the dialogue history to select the optimal emotion ID of the seeker.\n2. Based on the identified emotional state, analyze the dialogue history again to select the most appropriate strategy ID.\n3. Generate a response strictly adhering to the selected strategy and the identified emotional state.'''
+usr_prompt = '''### History\n{history}.\n\n### Task\nAs an emotion-sensing assistant, analyze the emotional state of the current seeker based on the conversation history and select the appropriate ID from the candidats.\n\nEmotion list:\n{emotion_list}\n\nAnswer:\n'''
+subtask1_prompt = '''### Task\nAs the supporter in the conversation, choose the appropriate strategy from the candidates and output the corresponding number ID.\n\nStrategy list:\n{strategy_list}\n\nAnswer:\n'''
+subtask2_prompt = '''As the supporter in this conversation, based on the above information and your chosen strategy, continue to respond to the conversation.\n\nAnswer:\n'''
+
+id2strategy = {0: 'Question', 1: 'Others', 2: 'Providing Suggestions', 3: 'Affirmation and Reassurance', 4: 'Self-disclosure', 5: 'Reflection of feelings', 6: 'Information', 7: 'Restatement or Paraphrasing'} 
+id2emo = {0: 'anger', 1: 'anxiety', 2: 'depression', 3: 'disgust', 4: 'fear', 5: 'guilt', 6: 'jealousy', 7: 'nervousness', 8: 'pain', 9: 'sadness', 10: 'shame'}

@@ -1,0 +1,68 @@
+{
+    "WoS-HTC":{
+        "file_name": "PATH_TO_WoS_DATASET",
+        "formatting": "alpaca",
+        "add_thought": true,
+        "has_subtask": true,
+        "columns":{
+            "prompt": "system",
+            "query": "input",
+            "thought": "think",
+            "subtask": "subtask",
+            "response": "assistant"
+        }
+    },
+    "GSM8K-Depth2":{
+        "file_name": "PATH_TO_GSM8K_DATASET",
+        "formatting": "alpaca",
+        "add_thought": true,
+        "columns":{
+            "query": "question",
+            "thought": "rationale",
+            "response": "answer"
+        }
+    },
+    "DBP-HTC":{
+        "file_name": "PATH_TO_DBpedia_DATASET",
+        "formatting": "alpaca",
+        "add_double_thought": true,
+        "has_double_task": true,
+        "columns": {
+            "prompt": "system",
+            "query": "input",
+            "first_thought": "think_1",
+            "subtask_1": "subtask_1",
+            "second_thought": "think_2",
+            "subtask_2": "subtask_2",
+            "response": "assistant"
+        }
+    },
+    "ESC-Depth2":{
+        "file_name": "PATH_TO_ESC-D2_DATASET",
+        "formatting": "alpaca",
+        "add_thought": true,
+        "has_subtask": true,
+        "columns": {
+            "prompt": "system",
+            "query": "input",
+            "thought": "think",
+            "subtask": "subtask",
+            "response": "assistant"
+        }
+    },
+    "ESC-Depth3":{
+        "file_name": "PATH_TOESC-D3_DATASET",
+        "formatting": "alpaca",
+        "add_double_thought": true,
+        "has_double_task": true,
+        "columns": {
+            "prompt": "system",
+            "query": "input",
+            "first_thought": "think_1",
+            "subtask_1": "subtask_1",
+            "second_thought": "think_2",
+            "subtask_2": "subtask_2",
+            "response": "assistant"
+        }
+    }
+}
