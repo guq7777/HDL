@@ -10,8 +10,7 @@ from pathlib import Path
 import argparse
 import hashlib
 
-# 添加模型工具路径（确保路径正确）
-sys.path.append("/vepfs/group04/user/xiningyuan/HdLM_git/HdLM/utils/LLaMA-Factory/src/llamafactory/model/hdlm_utils")
+sys.path.append(f"{base_dir}/train/LLaMA-Factory/src/llamafactory/model/hdlm_utils")
 from hdlm_depth2 import Depth2_HdLMModel
 from transformers import AutoTokenizer
 
@@ -118,7 +117,7 @@ if __name__ == "__main__":
 
     multiprocessing.set_start_method('spawn')
 
-    data_path = "/vepfs/group04/user/xiningyuan/HdLM_git/HdLM/data/Depth2/CommonSenseQA/commonsense_qa_alpaca_train.jsonl"
+    data_path = "{base_dir}/data/CommonSenseQA/raw/test.jsonl"
 
     num_gpus = 4
     with Pool(num_gpus) as pool:
@@ -146,7 +145,6 @@ if __name__ == "__main__":
     with open(output_dir / 'full_results.json', 'w') as f:
         json.dump(all_results, f, indent=2)
 
-    # ===== 同时计算两种 acc =====
     metrics = {}
     metrics.update(evaluate_l2_only(all_results))
     metrics.update(evaluate_l2_strict_acc(all_results))
